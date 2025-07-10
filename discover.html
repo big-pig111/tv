@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LetsBonk 发现</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><img src="assets/logo.png" alt="LetsBonk"/> LetsBonk</div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="home">首页</a></li>
+      <li><a href="start.html" data-i18n="start">开始直播</a></li>
+      <li><a href="discover.html" data-i18n="discover">发现</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="walletBtn"></button>
+      <button id="themeToggle">🌙</button>
+      <select id="langSelect">
+        <option value="zh">中文</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+  <main>
+    <h1 data-i18n="discover_headline">发现 Live Streams</h1>
+    <div class="discover-controls">
+      <input type="text" id="searchInput" placeholder="搜索/标签..." data-i18n-placeholder="search_placeholder"/>
+      <select id="tagFilter">
+        <option value="">全部标签</option>
+      </select>
+    </div>
+    <div id="liveList" class="live-list"></div>
+  </main>
+  <script src="js/wallet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
