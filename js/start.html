@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LetsBonk 开始直播</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><img src="assets/logo.svg" alt="LetsBonk"/> LetsBonk</div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="home">首页</a></li>
+      <li><a href="start.html" data-i18n="start">开始直播</a></li>
+      <li><a href="discover.html" data-i18n="discover">发现</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button id="walletBtn"></button>
+      <button id="themeToggle">🌙</button>
+      <select id="langSelect">
+        <option value="zh">中文</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+  <main>
+    <div class="main-title-wrapper"><h1 data-i18n="start_headline" class="main-title">使用您的代币上线</h1></div>
+    <form id="liveForm" class="live-form">
+      <label data-i18n="token_address">Token 地址</label>
+      <input type="text" id="tokenAddress" placeholder="Token URL 或 Mint Address" required />
+      <label data-i18n="stream_url">流 URL</label>
+      <input type="url" id="streamUrl" placeholder="https://youtube.com/watch?v=..." required />
+      <label data-i18n="title">流标题</label>
+      <input type="text" id="streamTitle" maxlength="100" required />
+      <label data-i18n="desc">流描述</label>
+      <textarea id="streamDesc" maxlength="500"></textarea>
+      <label data-i18n="tags">标签</label>
+      <input type="text" id="streamTags" placeholder="用逗号分隔" />
+      <button type="submit" data-i18n="submit">提交</button>
+    </form>
+  </main>
+  <script src="js/wallet.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html> 

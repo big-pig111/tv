@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LetsBonk 电视</title>
+  <link rel="stylesheet" href="css/style.css">
+<body>
+  <nav class="navbar">
+    <div class="logo"><img src="assets/logo.png" alt="LetsBonk"/> LetsBonk</div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="home">首页</a></li>
+      <li><a href="start.html" data-i18n="start">开始直播</a></li>
+      <li><a href="discover.html" data-i18n="discover">发现</a></li>
+      </ul>
+    <div class="nav-actions">
+      <button id="walletBtn"></button>
+      <button id="themeToggle">🌙</button>
+      <select id="langSelect">
+        <option value="zh">中文</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+  <main>
+    <div class="main-title-wrapper"><h1 data-i18n="headline" class="main-title">LetsBonk 电视</h1></div>
+    <div id="liveList" class="live-list"></div>
+  </main>
+  <script src="js/wallet.js"></script>
+    <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA5Z5ieEbAcfQX0kxGSn9ldGXhzvAwx_8M",
+      authDomain: "chat-294cc.firebaseapp.com",
+      databaseURL: "https://chat-294cc-default-rtdb.firebaseio.com",
+      projectId: "chat-294cc",
+      storageBucket: "chat-294cc.firebasestorage.app",
+      messagingSenderId: "913615304269",
+      appId: "1:913615304269:web:0274ffaccb8e6b678e4e04",
+      measurementId: "G-SJR9NDW86B"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    
+    // 导出供其他脚本使用
+    window.firebaseDB = db;
+    window.firebaseCollection = collection;
+    window.firebaseAddDoc = addDoc;
+    window.firebaseGetDocs = getDocs;
+    window.firebaseOnSnapshot = onSnapshot;
+    
+    console.log('Firebase初始化成功!', app);
+  </script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
